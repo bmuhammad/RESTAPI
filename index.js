@@ -74,12 +74,10 @@ router.get("/:id", function (req, res, next) {
 //   });
 
 
-router.listen(5000, function () {
-    console.log("Node server is running on  https://restapi-nine-kappa.vercel.app/"); //      http://localhose:5000..");
- });
-//Create server to listen on port 5000
-// var server = router.listen(5000, function () {
-//    console.log("Node server is running on  https://restapi-nine-kappa.vercel.app/"); //      http://localhose:5000..");
-// });
 
-// module.exports = server;
+//Create server to listen on port 5000
+var server = router.listen("https://restapi-nine-kappa.vercel.app/", function () {
+   console.log("Node server is running on  https://restapi-nine-kappa.vercel.app/"); //      http://localhose:5000..");
+});
+
+module.exports = server;
