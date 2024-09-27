@@ -73,10 +73,10 @@ router.get("/:id", function (req, res, next) {
 //     console.log("Running on port 5000.");
 //   });
 
-
+app.use('/api', router); // Mount the router at the '/api' path
 
 //Create server to listen on port 5000
-var server = router.listen("https://restapi-nine-kappa.vercel.app/", function () {
+var server = app.listen("https://restapi-nine-kappa.vercel.app/", function () {
    console.log("Node server is running on  https://restapi-nine-kappa.vercel.app/"); //      http://localhose:5000..");
 });
 
