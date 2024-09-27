@@ -31,18 +31,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 // });
 
 router.get('/', (req, res) => {
-    res.send(satelliteRepo.get(
-        function (data) {
-          res.status(200).json({
-            status: 200,
-            statusText: "OK",
-            message: "All satellites retrieved.",
-            data: data,
-          });
-        }
-      ));
-
-
+    res.send('Hello from Vercel!');
     
   });
 
