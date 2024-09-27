@@ -78,8 +78,8 @@ app.use('/api', router); // Mount the router at the '/api' path
 
 
 //Create server to listen on port 5000
- var server = app.listen(300, function () {
-   console.log("Node server is running on http://localhose:5000..");
- });
+//  var server = app.listen(300, function () {
+//    console.log("Node server is running on http://localhose:5000..");
+//  });
 
-module.exports = server;
+// module.exports = server;
