@@ -64,9 +64,12 @@ router.get("/:id", function (req, res, next) {
 //app.use("/api/", router);
 //test for vercel deploy
 //after test this works.
-app.get("/", (req, res) => {
-    res.send("Express on Vercel");
-  });
+//app.get("/", (req, res) => {
+ //   res.send("Express on Vercel");
+ // });
+
+ 
+ app.use('/api', router); // Mount the router at '/api'
   
   // Initialize server
 app.listen(5000, () => {
