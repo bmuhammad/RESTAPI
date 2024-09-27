@@ -73,7 +73,7 @@ router.get("/:id", function (req, res, next) {
 //     console.log("Running on port 5000.");
 //   });
 
-app.use('/api', router); // Mount the router at the '/api' path
+app.use('/api', router);
 
 //Create server to listen on port 5000
 var server = app.listen("https://restapi-nine-kappa.vercel.app/", function () {
