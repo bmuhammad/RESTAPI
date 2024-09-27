@@ -1,5 +1,7 @@
 // Add express server and create application
 let express = require("express");
+let cors = require('cors');
+
 //Use the express Router opbject
 let router = express.Router();
 let app = express();
@@ -14,6 +16,9 @@ router.get("/", function (req, res, next) {
 
 
 app.use('/', router);
+
+//Configure cors
+app.use(cors());
 
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
