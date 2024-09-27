@@ -86,4 +86,4 @@ app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });
 
- module.exports = server;
+ module.exports = app;
