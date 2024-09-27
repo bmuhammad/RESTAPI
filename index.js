@@ -75,11 +75,15 @@ router.get("/", function (req, res, next) {
 
 app.use('/api', router); // Mount the router at the '/api' path
 
-
+const PORT = process.env.PORT || 3000;
 
 //Create server to listen on port 5000
-  var server = app.listen(3000, function () {
-    console.log("Node server is running on http://localhose:5000..");
+//   var server = app.listen(3000, function () {
+//     console.log("Node server is running on http://localhose:5000..");
+//   });
+
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
   });
 
  module.exports = server;
