@@ -1,29 +1,24 @@
-let fs = require('fs');
-const FILE_NAME = './assets/satellites.json'
-
 let satelliteRepo = {
-  get: function (resolve, reject) {
-    fs.readFile(FILE_NAME, function (err, data) {
-        if (err) {
-            reject(err);
-        }
-        else {
-            resolve(JSON.parse(data));
-        }
-    });
+  get: function () {
+    return [
+      {
+        id: 1,
+        type: "Communication",
+        description:
+          " Used for telecommunication and broadcasting, these satellites relay and amplify radio signals from Earth and retransmit them back to Earth",
+      },
+      {
+        id: 2,
+        type: "EarthObservation",
+        description:
+          "Also known as Earth remote sensing satellites, these satellites are used for environmental monitoring, meteorology, mapping, and other applications",
+      },
+      {
+        id: 3,
+        type: "Astronomical",
+        description: "Used to monitor and image space",
+      },
+    ];
   },
-  getById:function (id, resolve, reject) {
-    fs.readFile(FILE_NAME, function (err, data) {
-        if(err) {
-            reject(err)
-        }
-        else {
-            let satellite = JSON.parse(data). find(s => s.id ==id);
-            resolve(satellite);
-        }
-    })
-  }
-  
 };
-
 module.exports = satelliteRepo;

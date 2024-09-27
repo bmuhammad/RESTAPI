@@ -7,7 +7,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 
 
 //possible sql  call for data
-///let satellites = satelliteRepo.get();
+let satellites = satelliteRepo.get();
 
 //Create GET to return a list of items
 // router.get("/", function (req, res, next) {
@@ -33,20 +33,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 router.get("/", function (req, res, next) {
    
 
-        satelliteRepo.get(
-            function (data) {
-              res.status(200).json({
-                status: 200,
-                statusText: "OK",
-                message: "All satellites retrieved.",
-                data: data,
-              });
-            },
-            function (err) {
-              next(err);
-            }
-          )
-
+    res.send(satellites);
 
  
     
