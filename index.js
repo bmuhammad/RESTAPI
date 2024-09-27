@@ -72,10 +72,10 @@ router.get("/", function (req, res, next) {
 // app.listen(5000, () => {
 //     console.log("Running on port 5000.");
 //   });
-
+const PORT = process.env.PORT || 3000;
 app.use('/api', router); // Mount the router at the '/api' path
 
-const PORT = process.env.PORT || 3000;
+
 
 //Create server to listen on port 5000
 //   var server = app.listen(3000, function () {
@@ -86,4 +86,4 @@ app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });
 
- //module.exports = app;
+ module.exports = app;
