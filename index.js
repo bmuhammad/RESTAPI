@@ -5,7 +5,6 @@ let router = express.Router();
 let app = express();
 let satelliteRepo = require("./repos/satelliteRepo");
 
-
 //possible sql  call for data
 ///let satellites = satelliteRepo.get();
 
@@ -30,9 +29,21 @@ let satelliteRepo = require("./repos/satelliteRepo");
 //   );
 // });
 
-router.get('/', (req, res) => {
-    res.send('Hello from Vercel!');
-  });
+router.get("/", function (req, res, next) {
+  satelliteRepo.get(
+    function (data) {
+      res.status(200).json({
+        status: 200,
+        statusText: "OK",
+        message: "All satellites retrieved.",
+        data: data,
+      });
+    },
+    function (err) {
+      next(err);
+    }
+  );
+});
 
 //Create GET/id to return a single satellite
 // router.get("/:id", function (req, res, next) {
@@ -68,11 +79,11 @@ router.get('/', (req, res) => {
 //Configure router so all routes are prefixed with /api/v1
 //app.use("/api/", router);
 //test for vercel deploy
-//after test this works. will need to change for 
+//after test this works. will need to change for
 // app.get("/", (req, res) => {
 //     res.send("Express on Vercel");
 //   });
-  
+
 //   // Initialize server
 // app.listen(5000, () => {
 //     console.log("Running on port 5000.");
@@ -85,8 +96,8 @@ router.get('/', (req, res) => {
 
 //module.exports = server;
 
-app.use('/', router);
+app.use("/", router);
 
 app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+  console.log("Server listening on port 3000");
 });
