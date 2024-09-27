@@ -30,7 +30,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 //   );
 // });
 
-router.get('/', (req, res) => {
+router.get("/", function (req, res, next) {
     res.send(satelliteRepo.get(
         function (data) {
           res.status(200).json({
