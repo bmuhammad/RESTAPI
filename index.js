@@ -30,35 +30,35 @@ router.get("/", function (req, res, next) {
 });
 
 //Create GET/id to return a single satellite
-router.get("/:id", function (req, res, next) {
-  satelliteRepo.getById(
-    req.params.id,
-    function (data) {
-      if (data) {
-        res.status(200).json({
-          status: 200,
-          statusText: "OK",
-          message: "All satellites retrieved.",
-          data: data,
-        });
-      } else {
-        res.status(200).json({
-          status: 404,
-          statusText: ",Not Found",
-          message: "The satellite '" + req.params.id + "' could not be found.",
-          error: {
-            code: "NOT_FOUND",
-            message:
-              "The satellite '" + req.params.id + "' could not be found.",
-          },
-        });
-      }
-    },
-    function (err) {
-      next(err);
-    }
-  );
-});
+// router.get("/:id", function (req, res, next) {
+//   satelliteRepo.getById(
+//     req.params.id,
+//     function (data) {
+//       if (data) {
+//         res.status(200).json({
+//           status: 200,
+//           statusText: "OK",
+//           message: "All satellites retrieved.",
+//           data: data,
+//         });
+//       } else {
+//         res.status(200).json({
+//           status: 404,
+//           statusText: ",Not Found",
+//           message: "The satellite '" + req.params.id + "' could not be found.",
+//           error: {
+//             code: "NOT_FOUND",
+//             message:
+//               "The satellite '" + req.params.id + "' could not be found.",
+//           },
+//         });
+//       }
+//     },
+//     function (err) {
+//       next(err);
+//     }
+//   );
+// });
 
 //Configure router so all routes are prefixed with /api/v1
 //app.use("/api/", router);
@@ -73,12 +73,7 @@ router.get("/:id", function (req, res, next) {
 //     console.log("Running on port 5000.");
 //   });
 
-
 app.use('/api', router); // Mount the router at the '/api' path
-
-app.listen(5000, () => {
-    console.log('Server listening on port 3000');
-  });
 
 //Create server to listen on port 5000
 // var server = app.listen(5000, function () {
