@@ -64,14 +64,22 @@ router.get("/:id", function (req, res, next) {
 //app.use("/api/", router);
 //test for vercel deploy
 //after test this works. will need to change for 
-app.get("/", (req, res) => {
-    res.send("Express on Vercel");
-  });
+// app.get("/", (req, res) => {
+//     res.send("Express on Vercel");
+//   });
   
-  // Initialize server
-app.listen(5000, () => {
-    console.log("Running on port 5000.");
-  });
+//   // Initialize server
+// app.listen(5000, () => {
+//     console.log("Running on port 5000.");
+//   });
+
+app.use('/api', router);
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+});
 
 //Create server to listen on port 5000
 // var server = app.listen(5000, function () {
