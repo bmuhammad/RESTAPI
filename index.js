@@ -30,7 +30,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 //   );
 // });
 
-router.get("/", function (req, res, next) {
+router.get('/', (req, res) => {
     res.send(satelliteRepo.get(
         function (data) {
           res.status(200).json({
@@ -39,9 +39,6 @@ router.get("/", function (req, res, next) {
             message: "All satellites retrieved.",
             data: data,
           });
-        },
-        function (err) {
-          next(err);
         }
       ));
 
