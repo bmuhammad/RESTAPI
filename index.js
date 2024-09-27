@@ -31,7 +31,7 @@ let satelliteRepo = require("./repos/satelliteRepo");
 // });
 
 router.get("/", function (req, res, next) {
-    res.send(
+   
 
         satelliteRepo.get(
             function (data) {
@@ -48,7 +48,7 @@ router.get("/", function (req, res, next) {
           )
 
 
-    );
+ 
     
   });
 
