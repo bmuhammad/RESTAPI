@@ -81,4 +81,4 @@ app.listen(5000, () => {
 //   console.log("Node server is running on http://localhose:5000..");
 // });
 
-//module.exports = server;
+module.exports = app;
