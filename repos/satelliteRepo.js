@@ -6,7 +6,7 @@ let satelliteRepo = {
         type: "Communication",
         description:
           " Used for telecommunication and broadcasting, these satellites relay and amplify radio signals from Earth and retransmit them back to Earth",
-      imageUrl : "./images/communication.jpg"
+      imageUrl : "/images/communication.jpg"
         },
       {
         id: 2,
