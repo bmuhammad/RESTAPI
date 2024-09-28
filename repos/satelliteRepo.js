@@ -10,7 +10,7 @@ let satelliteRepo = {
         },
       {
         id: 2,
-        type: "EarthObservation",
+        type: "Earth Observation",
         description:
           "Also known as Earth remote sensing satellites, these satellites are used for environmental monitoring, meteorology, mapping, and other applications",
         imageUrl: "images/earthObservation.jpg"
